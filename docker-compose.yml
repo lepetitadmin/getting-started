@@ -5,9 +5,6 @@ services:
     image: getting-started
     ports:
       - 3000:3000
-    working_dir: /app
-    volumes:
-      - ./:/app
     environment:
       MYSQL_HOST: mysql
       MYSQL_USER: root
@@ -15,7 +12,7 @@ services:
       MYSQL_DB: todos
 
   mysql:
-    image: arm64v8/mariadb
+    image: mariadb
     volumes:
       - todo-mysql-data:/var/lib/mysql
     environment: 
